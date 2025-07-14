@@ -23,32 +23,50 @@
     grid-area: header;
 }
 
-.form {
-    grid-area: form;
-    height: 8%;
-}
-
 .form-label {
     display: flex;
     justify-content: center;
     margin-top: 0% important;
 }
 
-.main {
+main {
     grid-area: main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 75% auto 7% 10%;
+    grid-template-areas:
+        "card"
+        "modelo"
+        "ver_mas"
+        "paguina";
 }
 
-/* .carousel-item { */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* height: 80%; */
-    /* width: 80%; */
-    /* object-fit: cover; */
-/* } */
+.card {
+    grid-area: card;
+    display: flex;
+}
 
 .modelo {
-    text-align: center;
+    grid-area: modelo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.ver_mas {
+    grid-area: ver_mas;
+    display: flex;
+    justify-content: center;
+}
+
+.paguina {
+    grid-area: paguina;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    gap: 10px;
 }
 
 .footer {
