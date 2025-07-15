@@ -12,11 +12,12 @@
     background-color: #f0f0f0;
     color: #333;
     grid-template-columns: 1fr;
-    grid-template-rows: 8% 8% auto 8%;
+    grid-template-rows: 8% 8% auto 8% 8%;
     grid-template-areas:
         "header"
         "form"
         "main"
+        "section"
         "footer";
 }
 .header {
@@ -33,12 +34,11 @@ main {
     grid-area: main;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 75% auto 7% 10%;
+    grid-template-rows: 86% 7% 7%;
     grid-template-areas:
         "card"
         "modelo"
-        "ver_mas"
-        "paguina";
+        "ver_mas";
 }
 
 .card {
@@ -57,18 +57,54 @@ main {
 .ver_mas {
     grid-area: ver_mas;
     display: flex;
-    justify-content: center;
-}
-
-.paguina {
-    grid-area: paguina;
-    display: flex;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    font-size: medium;
-    gap: 10px;
+    font-size: large;
+    /* font-size: 1.4rem; */
+}
+
+.section {
+    grid-area: section;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    gap: 20px;
 }
 
 .footer {
     grid-area: footer;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: bold large;
+    gap: 20px;
+    background-color: bs-grey-300;
+}
+
+@media (min-width: 576px) {
+    .container_general {
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 10% 10% 60% 10% 10%;
+        grid-template-areas:
+            "header form"
+            "header main"
+            "header main"
+            "footer main"
+            "footer section";
+    }
+    
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "card card"
+            "modelo ver_mas";
+    }
 }
